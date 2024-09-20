@@ -1,5 +1,5 @@
-import 'package:dart_strapi/dart_strapi.dart';
-import 'package:dart_strapi/src/models/models.dart';
+import 'package:dart_strapi_client/dart_strapi_client.dart';
+import 'package:dart_strapi_client/src/models/models.dart';
 import 'package:dio/dio.dart';
 import 'package:tuple/tuple.dart';
 
@@ -49,14 +49,14 @@ class _Collection {
   ///
   Future<Tuple2<Map<String, dynamic>?, Meta?>> getOne(
     String single,
-    int id, {
+    String documentId, {
     Options? options,
     Map<String, dynamic>? queryParameters,
     CancelToken? cancelToken,
     void Function(int, int)? onReceiveProgress,
   }) {
     return _client.single.get(
-      "$single/$id",
+      "$single/$documentId",
       options: options,
       queryParameters: queryParameters,
       cancelToken: cancelToken,

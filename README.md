@@ -1,8 +1,6 @@
 # dart_strapi
 
-dart client for [Strapi V4](https://strapi.io/v4)
-
-> For [Strapi V3](https://docs-v3.strapi.io/) client check [v1.2.0](https://pub.dev/packages/dart_strapi/versions/1.2.0)
+dart client for [Strapi V5](https://strapi.io/v5)
 
 
 ## Example

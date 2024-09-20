@@ -1,5 +1,5 @@
-import 'package:dart_strapi/dart_strapi.dart';
-import 'package:dart_strapi/src/models/models.dart';
+import 'package:dart_strapi_client/dart_strapi_client.dart';
+import 'package:dart_strapi_client/src/models/models.dart';
 import 'package:dio/dio.dart' hide Response;
 
 class _Resource {
@@ -36,6 +36,9 @@ class _Resource {
         onReceiveProgress: onReceiveProgress,
       );
 
+      if (response.data == null || response.data.isEmpty) {
+        return Response.error("Empty response");
+      }
       // TODO: Check if empty
       final json = response.data;
 

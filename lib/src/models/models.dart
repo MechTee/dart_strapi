@@ -30,7 +30,7 @@ class DataConverter implements JsonConverter<Data, dynamic> {
     if (json is List) {
       return CollectionData.fromJson({'data': json});
     } else if (json is Map<String, dynamic>) {
-      return SingleData.fromJson(json);
+      return SingleData.fromJson({'data': json});
     } else {
       throw Exception(
           'Could not determine the constructor for mapping from JSON');
@@ -56,10 +56,10 @@ class Response with _$Response {
 @freezed
 class Meta with _$Meta {
   const factory Meta({
-    @required Pagination? pagination,
+    Pagination? pagination,
   }) = MetaData;
 
-  factory Meta.fromJson(Map<String, dynamic> json) => _$MetaFromJson(json);
+  factory Meta.fromJson(Map<String, dynamic>? json) => json != null ? (json.isEmpty ? new Meta() :_$MetaFromJson(json)) : new Meta();
 }
 
 @freezed

@@ -1,4 +1,4 @@
-import 'package:dart_strapi/dart_strapi.dart';
+import 'package:dart_strapi_client/dart_strapi_client.dart';
 import 'package:test/test.dart';
 
 final serverURl = "http://localhost:1337/";

@@ -6,79 +6,89 @@ part of 'models.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$SingleData _$$SingleDataFromJson(Map<String, dynamic> json) => _$SingleData(
+_$SingleDataImpl _$$SingleDataImplFromJson(Map<String, dynamic> json) =>
+    _$SingleDataImpl(
       json['data'] as Map<String, dynamic>,
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$SingleDataToJson(_$SingleData instance) =>
+Map<String, dynamic> _$$SingleDataImplToJson(_$SingleDataImpl instance) =>
     <String, dynamic>{
       'data': instance.data,
       'runtimeType': instance.$type,
     };
 
-_$CollectionData _$$CollectionDataFromJson(Map<String, dynamic> json) =>
-    _$CollectionData(
+_$CollectionDataImpl _$$CollectionDataImplFromJson(Map<String, dynamic> json) =>
+    _$CollectionDataImpl(
       (json['data'] as List<dynamic>)
           .map((e) => e as Map<String, dynamic>)
           .toList(),
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$CollectionDataToJson(_$CollectionData instance) =>
+Map<String, dynamic> _$$CollectionDataImplToJson(
+        _$CollectionDataImpl instance) =>
     <String, dynamic>{
       'data': instance.data,
       'runtimeType': instance.$type,
     };
 
-_$ResponseData _$$ResponseDataFromJson(Map<String, dynamic> json) =>
-    _$ResponseData(
-      data: json['data'] == null ? null : Data.fromJson(json['data']),
+_$ResponseDataImpl _$$ResponseDataImplFromJson(Map<String, dynamic> json) =>
+    _$ResponseDataImpl(
+      data: const DataConverter().fromJson(json['data']),
       meta: json['meta'] == null
           ? null
           : Meta.fromJson(json['meta'] as Map<String, dynamic>),
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$ResponseDataToJson(_$ResponseData instance) =>
+Map<String, dynamic> _$$ResponseDataImplToJson(_$ResponseDataImpl instance) =>
     <String, dynamic>{
-      'data': instance.data,
-      'meta': instance.meta,
+      'data': _$JsonConverterToJson<dynamic, Data>(
+          instance.data, const DataConverter().toJson), 
       'runtimeType': instance.$type,
     };
 
-_$ResponseError _$$ResponseErrorFromJson(Map<String, dynamic> json) =>
-    _$ResponseError(
+Json? _$JsonConverterToJson<Json, Value>(
+  Value? value,
+  Json? Function(Value value) toJson,
+) =>
+    value == null ? null : toJson(value);
+
+_$ResponseErrorImpl _$$ResponseErrorImplFromJson(Map<String, dynamic> json) =>
+    _$ResponseErrorImpl(
       json['message'] as String,
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$ResponseErrorToJson(_$ResponseError instance) =>
+Map<String, dynamic> _$$ResponseErrorImplToJson(_$ResponseErrorImpl instance) =>
     <String, dynamic>{
       'message': instance.message,
       'runtimeType': instance.$type,
     };
 
-_$MetaData _$$MetaDataFromJson(Map<String, dynamic> json) => _$MetaData(
+_$MetaDataImpl _$$MetaDataImplFromJson(Map<String, dynamic> json) =>
+    _$MetaDataImpl(
       pagination: json['pagination'] == null
           ? null
           : Pagination.fromJson(json['pagination'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$MetaDataToJson(_$MetaData instance) =>
+Map<String, dynamic> _$$MetaDataImplToJson(_$MetaDataImpl instance) =>
     <String, dynamic>{
       'pagination': instance.pagination,
     };
 
-_$PaginationData _$$PaginationDataFromJson(Map<String, dynamic> json) =>
-    _$PaginationData(
-      page: json['page'] as int?,
-      pageSize: json['pageSize'] as int?,
-      pageCount: json['pageCount'] as int?,
-      total: json['total'] as int?,
+_$PaginationDataImpl _$$PaginationDataImplFromJson(Map<String, dynamic> json) =>
+    _$PaginationDataImpl(
+      page: (json['page'] as num?)?.toInt(),
+      pageSize: (json['pageSize'] as num?)?.toInt(),
+      pageCount: (json['pageCount'] as num?)?.toInt(),
+      total: (json['total'] as num?)?.toInt(),
     );
 
-Map<String, dynamic> _$$PaginationDataToJson(_$PaginationData instance) =>
+Map<String, dynamic> _$$PaginationDataImplToJson(
+        _$PaginationDataImpl instance) =>
     <String, dynamic>{
       'page': instance.page,
       'pageSize': instance.pageSize,

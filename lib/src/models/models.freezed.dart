@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'models.dart';
 
@@ -12,7 +12,7 @@ part of 'models.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 Data _$DataFromJson(Map<String, dynamic> json) {
   switch (json['runtimeType']) {
@@ -28,31 +28,8 @@ Data _$DataFromJson(Map<String, dynamic> json) {
 }
 
 /// @nodoc
-class _$DataTearOff {
-  const _$DataTearOff();
-
-  SingleData single(Map<String, dynamic> data) {
-    return SingleData(
-      data,
-    );
-  }
-
-  CollectionData collection(List<Map<String, dynamic>> data) {
-    return CollectionData(
-      data,
-    );
-  }
-
-  Data fromJson(Map<String, Object?> json) {
-    return Data.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Data = _$DataTearOff();
-
-/// @nodoc
 mixin _$Data {
+  Object get data => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(Map<String, dynamic> data) single,
@@ -61,8 +38,8 @@ mixin _$Data {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Map<String, dynamic> data)? single,
-    TResult Function(List<Map<String, dynamic>> data)? collection,
+    TResult? Function(Map<String, dynamic> data)? single,
+    TResult? Function(List<Map<String, dynamic>> data)? collection,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -80,8 +57,8 @@ mixin _$Data {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(SingleData value)? single,
-    TResult Function(CollectionData value)? collection,
+    TResult? Function(SingleData value)? single,
+    TResult? Function(CollectionData value)? collection,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -91,48 +68,58 @@ mixin _$Data {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
+  /// Serializes this Data to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $DataCopyWith<$Res> {
   factory $DataCopyWith(Data value, $Res Function(Data) then) =
-      _$DataCopyWithImpl<$Res>;
+      _$DataCopyWithImpl<$Res, Data>;
 }
 
 /// @nodoc
-class _$DataCopyWithImpl<$Res> implements $DataCopyWith<$Res> {
+class _$DataCopyWithImpl<$Res, $Val extends Data>
+    implements $DataCopyWith<$Res> {
   _$DataCopyWithImpl(this._value, this._then);
 
-  final Data _value;
   // ignore: unused_field
-  final $Res Function(Data) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of Data
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
-abstract class $SingleDataCopyWith<$Res> {
-  factory $SingleDataCopyWith(
-          SingleData value, $Res Function(SingleData) then) =
-      _$SingleDataCopyWithImpl<$Res>;
+abstract class _$$SingleDataImplCopyWith<$Res> {
+  factory _$$SingleDataImplCopyWith(
+          _$SingleDataImpl value, $Res Function(_$SingleDataImpl) then) =
+      __$$SingleDataImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({Map<String, dynamic> data});
 }
 
 /// @nodoc
-class _$SingleDataCopyWithImpl<$Res> extends _$DataCopyWithImpl<$Res>
-    implements $SingleDataCopyWith<$Res> {
-  _$SingleDataCopyWithImpl(SingleData _value, $Res Function(SingleData) _then)
-      : super(_value, (v) => _then(v as SingleData));
+class __$$SingleDataImplCopyWithImpl<$Res>
+    extends _$DataCopyWithImpl<$Res, _$SingleDataImpl>
+    implements _$$SingleDataImplCopyWith<$Res> {
+  __$$SingleDataImplCopyWithImpl(
+      _$SingleDataImpl _value, $Res Function(_$SingleDataImpl) _then)
+      : super(_value, _then);
 
-  @override
-  SingleData get _value => super._value as SingleData;
-
+  /// Create a copy of Data
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = freezed,
+    Object? data = null,
   }) {
-    return _then(SingleData(
-      data == freezed
-          ? _value.data
+    return _then(_$SingleDataImpl(
+      null == data
+          ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>,
     ));
@@ -141,14 +128,21 @@ class _$SingleDataCopyWithImpl<$Res> extends _$DataCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$SingleData implements SingleData {
-  const _$SingleData(this.data, {String? $type}) : $type = $type ?? 'single';
+class _$SingleDataImpl implements SingleData {
+  const _$SingleDataImpl(final Map<String, dynamic> data, {final String? $type})
+      : _data = data,
+        $type = $type ?? 'single';
 
-  factory _$SingleData.fromJson(Map<String, dynamic> json) =>
-      _$$SingleDataFromJson(json);
+  factory _$SingleDataImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SingleDataImplFromJson(json);
 
+  final Map<String, dynamic> _data;
   @override
-  final Map<String, dynamic> data;
+  Map<String, dynamic> get data {
+    if (_data is EqualUnmodifiableMapView) return _data;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_data);
+  }
 
   @JsonKey(name: 'runtimeType')
   final String $type;
@@ -159,21 +153,25 @@ class _$SingleData implements SingleData {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is SingleData &&
-            const DeepCollectionEquality().equals(other.data, data));
+            other is _$SingleDataImpl &&
+            const DeepCollectionEquality().equals(other._data, _data));
   }
 
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_data));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Data
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  $SingleDataCopyWith<SingleData> get copyWith =>
-      _$SingleDataCopyWithImpl<SingleData>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$SingleDataImplCopyWith<_$SingleDataImpl> get copyWith =>
+      __$$SingleDataImplCopyWithImpl<_$SingleDataImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -187,8 +185,8 @@ class _$SingleData implements SingleData {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Map<String, dynamic> data)? single,
-    TResult Function(List<Map<String, dynamic>> data)? collection,
+    TResult? Function(Map<String, dynamic> data)? single,
+    TResult? Function(List<Map<String, dynamic>> data)? collection,
   }) {
     return single?.call(data);
   }
@@ -218,8 +216,8 @@ class _$SingleData implements SingleData {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(SingleData value)? single,
-    TResult Function(CollectionData value)? collection,
+    TResult? Function(SingleData value)? single,
+    TResult? Function(CollectionData value)? collection,
   }) {
     return single?.call(this);
   }
@@ -239,47 +237,55 @@ class _$SingleData implements SingleData {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$SingleDataToJson(this);
+    return _$$SingleDataImplToJson(
+      this,
+    );
   }
 }
 
 abstract class SingleData implements Data {
-  const factory SingleData(Map<String, dynamic> data) = _$SingleData;
+  const factory SingleData(final Map<String, dynamic> data) = _$SingleDataImpl;
 
   factory SingleData.fromJson(Map<String, dynamic> json) =
-      _$SingleData.fromJson;
+      _$SingleDataImpl.fromJson;
 
+  @override
   Map<String, dynamic> get data;
-  @JsonKey(ignore: true)
-  $SingleDataCopyWith<SingleData> get copyWith =>
+
+  /// Create a copy of Data
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SingleDataImplCopyWith<_$SingleDataImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $CollectionDataCopyWith<$Res> {
-  factory $CollectionDataCopyWith(
-          CollectionData value, $Res Function(CollectionData) then) =
-      _$CollectionDataCopyWithImpl<$Res>;
+abstract class _$$CollectionDataImplCopyWith<$Res> {
+  factory _$$CollectionDataImplCopyWith(_$CollectionDataImpl value,
+          $Res Function(_$CollectionDataImpl) then) =
+      __$$CollectionDataImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({List<Map<String, dynamic>> data});
 }
 
 /// @nodoc
-class _$CollectionDataCopyWithImpl<$Res> extends _$DataCopyWithImpl<$Res>
-    implements $CollectionDataCopyWith<$Res> {
-  _$CollectionDataCopyWithImpl(
-      CollectionData _value, $Res Function(CollectionData) _then)
-      : super(_value, (v) => _then(v as CollectionData));
+class __$$CollectionDataImplCopyWithImpl<$Res>
+    extends _$DataCopyWithImpl<$Res, _$CollectionDataImpl>
+    implements _$$CollectionDataImplCopyWith<$Res> {
+  __$$CollectionDataImplCopyWithImpl(
+      _$CollectionDataImpl _value, $Res Function(_$CollectionDataImpl) _then)
+      : super(_value, _then);
 
-  @override
-  CollectionData get _value => super._value as CollectionData;
-
+  /// Create a copy of Data
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = freezed,
+    Object? data = null,
   }) {
-    return _then(CollectionData(
-      data == freezed
-          ? _value.data
+    return _then(_$CollectionDataImpl(
+      null == data
+          ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
               as List<Map<String, dynamic>>,
     ));
@@ -288,15 +294,22 @@ class _$CollectionDataCopyWithImpl<$Res> extends _$DataCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$CollectionData implements CollectionData {
-  const _$CollectionData(this.data, {String? $type})
-      : $type = $type ?? 'collection';
+class _$CollectionDataImpl implements CollectionData {
+  const _$CollectionDataImpl(final List<Map<String, dynamic>> data,
+      {final String? $type})
+      : _data = data,
+        $type = $type ?? 'collection';
 
-  factory _$CollectionData.fromJson(Map<String, dynamic> json) =>
-      _$$CollectionDataFromJson(json);
+  factory _$CollectionDataImpl.fromJson(Map<String, dynamic> json) =>
+      _$$CollectionDataImplFromJson(json);
 
+  final List<Map<String, dynamic>> _data;
   @override
-  final List<Map<String, dynamic>> data;
+  List<Map<String, dynamic>> get data {
+    if (_data is EqualUnmodifiableListView) return _data;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_data);
+  }
 
   @JsonKey(name: 'runtimeType')
   final String $type;
@@ -307,21 +320,26 @@ class _$CollectionData implements CollectionData {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is CollectionData &&
-            const DeepCollectionEquality().equals(other.data, data));
+            other is _$CollectionDataImpl &&
+            const DeepCollectionEquality().equals(other._data, _data));
   }
 
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_data));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Data
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  $CollectionDataCopyWith<CollectionData> get copyWith =>
-      _$CollectionDataCopyWithImpl<CollectionData>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$CollectionDataImplCopyWith<_$CollectionDataImpl> get copyWith =>
+      __$$CollectionDataImplCopyWithImpl<_$CollectionDataImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -335,8 +353,8 @@ class _$CollectionData implements CollectionData {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Map<String, dynamic> data)? single,
-    TResult Function(List<Map<String, dynamic>> data)? collection,
+    TResult? Function(Map<String, dynamic> data)? single,
+    TResult? Function(List<Map<String, dynamic>> data)? collection,
   }) {
     return collection?.call(data);
   }
@@ -366,8 +384,8 @@ class _$CollectionData implements CollectionData {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(SingleData value)? single,
-    TResult Function(CollectionData value)? collection,
+    TResult? Function(SingleData value)? single,
+    TResult? Function(CollectionData value)? collection,
   }) {
     return collection?.call(this);
   }
@@ -387,20 +405,26 @@ class _$CollectionData implements CollectionData {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$CollectionDataToJson(this);
+    return _$$CollectionDataImplToJson(
+      this,
+    );
   }
 }
 
 abstract class CollectionData implements Data {
-  const factory CollectionData(List<Map<String, dynamic>> data) =
-      _$CollectionData;
+  const factory CollectionData(final List<Map<String, dynamic>> data) =
+      _$CollectionDataImpl;
 
   factory CollectionData.fromJson(Map<String, dynamic> json) =
-      _$CollectionData.fromJson;
+      _$CollectionDataImpl.fromJson;
 
+  @override
   List<Map<String, dynamic>> get data;
-  @JsonKey(ignore: true)
-  $CollectionDataCopyWith<CollectionData> get copyWith =>
+
+  /// Create a copy of Data
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$CollectionDataImplCopyWith<_$CollectionDataImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -418,31 +442,6 @@ Response _$ResponseFromJson(Map<String, dynamic> json) {
 }
 
 /// @nodoc
-class _$ResponseTearOff {
-  const _$ResponseTearOff();
-
-  ResponseData call({@DataConverter() Data? data, Meta? meta}) {
-    return ResponseData(
-      data: data,
-      meta: meta,
-    );
-  }
-
-  ResponseError error(String message) {
-    return ResponseError(
-      message,
-    );
-  }
-
-  Response fromJson(Map<String, Object?> json) {
-    return Response.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Response = _$ResponseTearOff();
-
-/// @nodoc
 mixin _$Response {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
@@ -452,8 +451,8 @@ mixin _$Response {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult Function(@DataConverter() Data? data, Meta? meta)? $default, {
-    TResult Function(String message)? error,
+    TResult? Function(@DataConverter() Data? data, Meta? meta)? $default, {
+    TResult? Function(String message)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -471,8 +470,8 @@ mixin _$Response {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(ResponseData value)? $default, {
-    TResult Function(ResponseError value)? error,
+    TResult? Function(ResponseData value)? $default, {
+    TResult? Function(ResponseError value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -482,29 +481,37 @@ mixin _$Response {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
+  /// Serializes this Response to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ResponseCopyWith<$Res> {
   factory $ResponseCopyWith(Response value, $Res Function(Response) then) =
-      _$ResponseCopyWithImpl<$Res>;
+      _$ResponseCopyWithImpl<$Res, Response>;
 }
 
 /// @nodoc
-class _$ResponseCopyWithImpl<$Res> implements $ResponseCopyWith<$Res> {
+class _$ResponseCopyWithImpl<$Res, $Val extends Response>
+    implements $ResponseCopyWith<$Res> {
   _$ResponseCopyWithImpl(this._value, this._then);
 
-  final Response _value;
   // ignore: unused_field
-  final $Res Function(Response) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of Response
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
-abstract class $ResponseDataCopyWith<$Res> {
-  factory $ResponseDataCopyWith(
-          ResponseData value, $Res Function(ResponseData) then) =
-      _$ResponseDataCopyWithImpl<$Res>;
+abstract class _$$ResponseDataImplCopyWith<$Res> {
+  factory _$$ResponseDataImplCopyWith(
+          _$ResponseDataImpl value, $Res Function(_$ResponseDataImpl) then) =
+      __$$ResponseDataImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({@DataConverter() Data? data, Meta? meta});
 
   $DataCopyWith<$Res>? get data;
@@ -512,33 +519,37 @@ abstract class $ResponseDataCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ResponseDataCopyWithImpl<$Res> extends _$ResponseCopyWithImpl<$Res>
-    implements $ResponseDataCopyWith<$Res> {
-  _$ResponseDataCopyWithImpl(
-      ResponseData _value, $Res Function(ResponseData) _then)
-      : super(_value, (v) => _then(v as ResponseData));
+class __$$ResponseDataImplCopyWithImpl<$Res>
+    extends _$ResponseCopyWithImpl<$Res, _$ResponseDataImpl>
+    implements _$$ResponseDataImplCopyWith<$Res> {
+  __$$ResponseDataImplCopyWithImpl(
+      _$ResponseDataImpl _value, $Res Function(_$ResponseDataImpl) _then)
+      : super(_value, _then);
 
-  @override
-  ResponseData get _value => super._value as ResponseData;
-
+  /// Create a copy of Response
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? data = freezed,
     Object? meta = freezed,
   }) {
-    return _then(ResponseData(
-      data: data == freezed
+    return _then(_$ResponseDataImpl(
+      data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as Data?,
-      meta: meta == freezed
+      meta: freezed == meta
           ? _value.meta
           : meta // ignore: cast_nullable_to_non_nullable
               as Meta?,
     ));
   }
 
+  /// Create a copy of Response
+  /// with the given fields replaced by the non-null parameter values.
   @override
+  @pragma('vm:prefer-inline')
   $DataCopyWith<$Res>? get data {
     if (_value.data == null) {
       return null;
@@ -549,7 +560,10 @@ class _$ResponseDataCopyWithImpl<$Res> extends _$ResponseCopyWithImpl<$Res>
     });
   }
 
+  /// Create a copy of Response
+  /// with the given fields replaced by the non-null parameter values.
   @override
+  @pragma('vm:prefer-inline')
   $MetaCopyWith<$Res>? get meta {
     if (_value.meta == null) {
       return null;
@@ -563,12 +577,13 @@ class _$ResponseDataCopyWithImpl<$Res> extends _$ResponseCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$ResponseData implements ResponseData {
-  const _$ResponseData({@DataConverter() this.data, this.meta, String? $type})
+class _$ResponseDataImpl implements ResponseData {
+  const _$ResponseDataImpl(
+      {@DataConverter() this.data, this.meta, final String? $type})
       : $type = $type ?? 'default';
 
-  factory _$ResponseData.fromJson(Map<String, dynamic> json) =>
-      _$$ResponseDataFromJson(json);
+  factory _$ResponseDataImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ResponseDataImplFromJson(json);
 
   @override
   @DataConverter()
@@ -585,24 +600,25 @@ class _$ResponseData implements ResponseData {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is ResponseData &&
-            const DeepCollectionEquality().equals(other.data, data) &&
-            const DeepCollectionEquality().equals(other.meta, meta));
+            other is _$ResponseDataImpl &&
+            (identical(other.data, data) || other.data == data) &&
+            (identical(other.meta, meta) || other.meta == meta));
   }
 
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(data),
-      const DeepCollectionEquality().hash(meta));
+  int get hashCode => Object.hash(runtimeType, data, meta);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Response
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  $ResponseDataCopyWith<ResponseData> get copyWith =>
-      _$ResponseDataCopyWithImpl<ResponseData>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$ResponseDataImplCopyWith<_$ResponseDataImpl> get copyWith =>
+      __$$ResponseDataImplCopyWithImpl<_$ResponseDataImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -616,8 +632,8 @@ class _$ResponseData implements ResponseData {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult Function(@DataConverter() Data? data, Meta? meta)? $default, {
-    TResult Function(String message)? error,
+    TResult? Function(@DataConverter() Data? data, Meta? meta)? $default, {
+    TResult? Function(String message)? error,
   }) {
     return $default?.call(data, meta);
   }
@@ -647,8 +663,8 @@ class _$ResponseData implements ResponseData {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(ResponseData value)? $default, {
-    TResult Function(ResponseError value)? error,
+    TResult? Function(ResponseData value)? $default, {
+    TResult? Function(ResponseError value)? error,
   }) {
     return $default?.call(this);
   }
@@ -668,49 +684,57 @@ class _$ResponseData implements ResponseData {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$ResponseDataToJson(this);
+    return _$$ResponseDataImplToJson(
+      this,
+    );
   }
 }
 
 abstract class ResponseData implements Response {
-  const factory ResponseData({@DataConverter() Data? data, Meta? meta}) =
-      _$ResponseData;
+  const factory ResponseData(
+      {@DataConverter() final Data? data,
+      final Meta? meta}) = _$ResponseDataImpl;
 
   factory ResponseData.fromJson(Map<String, dynamic> json) =
-      _$ResponseData.fromJson;
+      _$ResponseDataImpl.fromJson;
 
   @DataConverter()
   Data? get data;
   Meta? get meta;
-  @JsonKey(ignore: true)
-  $ResponseDataCopyWith<ResponseData> get copyWith =>
+
+  /// Create a copy of Response
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ResponseDataImplCopyWith<_$ResponseDataImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ResponseErrorCopyWith<$Res> {
-  factory $ResponseErrorCopyWith(
-          ResponseError value, $Res Function(ResponseError) then) =
-      _$ResponseErrorCopyWithImpl<$Res>;
+abstract class _$$ResponseErrorImplCopyWith<$Res> {
+  factory _$$ResponseErrorImplCopyWith(
+          _$ResponseErrorImpl value, $Res Function(_$ResponseErrorImpl) then) =
+      __$$ResponseErrorImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({String message});
 }
 
 /// @nodoc
-class _$ResponseErrorCopyWithImpl<$Res> extends _$ResponseCopyWithImpl<$Res>
-    implements $ResponseErrorCopyWith<$Res> {
-  _$ResponseErrorCopyWithImpl(
-      ResponseError _value, $Res Function(ResponseError) _then)
-      : super(_value, (v) => _then(v as ResponseError));
+class __$$ResponseErrorImplCopyWithImpl<$Res>
+    extends _$ResponseCopyWithImpl<$Res, _$ResponseErrorImpl>
+    implements _$$ResponseErrorImplCopyWith<$Res> {
+  __$$ResponseErrorImplCopyWithImpl(
+      _$ResponseErrorImpl _value, $Res Function(_$ResponseErrorImpl) _then)
+      : super(_value, _then);
 
-  @override
-  ResponseError get _value => super._value as ResponseError;
-
+  /// Create a copy of Response
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? message = freezed,
+    Object? message = null,
   }) {
-    return _then(ResponseError(
-      message == freezed
+    return _then(_$ResponseErrorImpl(
+      null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String,
@@ -720,12 +744,12 @@ class _$ResponseErrorCopyWithImpl<$Res> extends _$ResponseCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$ResponseError implements ResponseError {
-  const _$ResponseError(this.message, {String? $type})
+class _$ResponseErrorImpl implements ResponseError {
+  const _$ResponseErrorImpl(this.message, {final String? $type})
       : $type = $type ?? 'error';
 
-  factory _$ResponseError.fromJson(Map<String, dynamic> json) =>
-      _$$ResponseErrorFromJson(json);
+  factory _$ResponseErrorImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ResponseErrorImplFromJson(json);
 
   @override
   final String message;
@@ -739,21 +763,24 @@ class _$ResponseError implements ResponseError {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is ResponseError &&
-            const DeepCollectionEquality().equals(other.message, message));
+            other is _$ResponseErrorImpl &&
+            (identical(other.message, message) || other.message == message));
   }
 
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(message));
+  int get hashCode => Object.hash(runtimeType, message);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Response
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  $ResponseErrorCopyWith<ResponseError> get copyWith =>
-      _$ResponseErrorCopyWithImpl<ResponseError>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$ResponseErrorImplCopyWith<_$ResponseErrorImpl> get copyWith =>
+      __$$ResponseErrorImplCopyWithImpl<_$ResponseErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -767,8 +794,8 @@ class _$ResponseError implements ResponseError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult Function(@DataConverter() Data? data, Meta? meta)? $default, {
-    TResult Function(String message)? error,
+    TResult? Function(@DataConverter() Data? data, Meta? meta)? $default, {
+    TResult? Function(String message)? error,
   }) {
     return error?.call(message);
   }
@@ -798,8 +825,8 @@ class _$ResponseError implements ResponseError {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(ResponseData value)? $default, {
-    TResult Function(ResponseError value)? error,
+    TResult? Function(ResponseData value)? $default, {
+    TResult? Function(ResponseError value)? error,
   }) {
     return error?.call(this);
   }
@@ -819,19 +846,24 @@ class _$ResponseError implements ResponseError {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$ResponseErrorToJson(this);
+    return _$$ResponseErrorImplToJson(
+      this,
+    );
   }
 }
 
 abstract class ResponseError implements Response {
-  const factory ResponseError(String message) = _$ResponseError;
+  const factory ResponseError(final String message) = _$ResponseErrorImpl;
 
   factory ResponseError.fromJson(Map<String, dynamic> json) =
-      _$ResponseError.fromJson;
+      _$ResponseErrorImpl.fromJson;
 
   String get message;
-  @JsonKey(ignore: true)
-  $ResponseErrorCopyWith<ResponseError> get copyWith =>
+
+  /// Create a copy of Response
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ResponseErrorImplCopyWith<_$ResponseErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -840,78 +872,75 @@ Meta _$MetaFromJson(Map<String, dynamic> json) {
 }
 
 /// @nodoc
-class _$MetaTearOff {
-  const _$MetaTearOff();
-
-  MetaData call({Pagination? pagination}) {
-    return MetaData(
-      pagination: pagination,
-    );
-  }
-
-  Meta fromJson(Map<String, Object?> json) {
-    return Meta.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Meta = _$MetaTearOff();
-
-/// @nodoc
 mixin _$Meta {
   Pagination? get pagination => throw _privateConstructorUsedError;
 
+  /// Serializes this Meta to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Meta
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $MetaCopyWith<Meta> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $MetaCopyWith<$Res> {
   factory $MetaCopyWith(Meta value, $Res Function(Meta) then) =
-      _$MetaCopyWithImpl<$Res>;
+      _$MetaCopyWithImpl<$Res, Meta>;
+  @useResult
   $Res call({Pagination? pagination});
 
   $PaginationCopyWith<$Res>? get pagination;
 }
 
 /// @nodoc
-class _$MetaCopyWithImpl<$Res> implements $MetaCopyWith<$Res> {
+class _$MetaCopyWithImpl<$Res, $Val extends Meta>
+    implements $MetaCopyWith<$Res> {
   _$MetaCopyWithImpl(this._value, this._then);
 
-  final Meta _value;
   // ignore: unused_field
-  final $Res Function(Meta) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  /// Create a copy of Meta
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? pagination = freezed,
   }) {
     return _then(_value.copyWith(
-      pagination: pagination == freezed
+      pagination: freezed == pagination
           ? _value.pagination
           : pagination // ignore: cast_nullable_to_non_nullable
               as Pagination?,
-    ));
+    ) as $Val);
   }
 
+  /// Create a copy of Meta
+  /// with the given fields replaced by the non-null parameter values.
   @override
+  @pragma('vm:prefer-inline')
   $PaginationCopyWith<$Res>? get pagination {
     if (_value.pagination == null) {
       return null;
     }
 
     return $PaginationCopyWith<$Res>(_value.pagination!, (value) {
-      return _then(_value.copyWith(pagination: value));
+      return _then(_value.copyWith(pagination: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class $MetaDataCopyWith<$Res> implements $MetaCopyWith<$Res> {
-  factory $MetaDataCopyWith(MetaData value, $Res Function(MetaData) then) =
-      _$MetaDataCopyWithImpl<$Res>;
+abstract class _$$MetaDataImplCopyWith<$Res> implements $MetaCopyWith<$Res> {
+  factory _$$MetaDataImplCopyWith(
+          _$MetaDataImpl value, $Res Function(_$MetaDataImpl) then) =
+      __$$MetaDataImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({Pagination? pagination});
 
   @override
@@ -919,20 +948,22 @@ abstract class $MetaDataCopyWith<$Res> implements $MetaCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$MetaDataCopyWithImpl<$Res> extends _$MetaCopyWithImpl<$Res>
-    implements $MetaDataCopyWith<$Res> {
-  _$MetaDataCopyWithImpl(MetaData _value, $Res Function(MetaData) _then)
-      : super(_value, (v) => _then(v as MetaData));
+class __$$MetaDataImplCopyWithImpl<$Res>
+    extends _$MetaCopyWithImpl<$Res, _$MetaDataImpl>
+    implements _$$MetaDataImplCopyWith<$Res> {
+  __$$MetaDataImplCopyWithImpl(
+      _$MetaDataImpl _value, $Res Function(_$MetaDataImpl) _then)
+      : super(_value, _then);
 
-  @override
-  MetaData get _value => super._value as MetaData;
-
+  /// Create a copy of Meta
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? pagination = freezed,
   }) {
-    return _then(MetaData(
-      pagination: pagination == freezed
+    return _then(_$MetaDataImpl(
+      pagination: freezed == pagination
           ? _value.pagination
           : pagination // ignore: cast_nullable_to_non_nullable
               as Pagination?,
@@ -942,11 +973,11 @@ class _$MetaDataCopyWithImpl<$Res> extends _$MetaCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$MetaData implements MetaData {
-  const _$MetaData({this.pagination});
+class _$MetaDataImpl implements MetaData {
+  const _$MetaDataImpl({this.pagination});
 
-  factory _$MetaData.fromJson(Map<String, dynamic> json) =>
-      _$$MetaDataFromJson(json);
+  factory _$MetaDataImpl.fromJson(Map<String, dynamic> json) =>
+      _$$MetaDataImplFromJson(json);
 
   @override
   final Pagination? pagination;
@@ -957,39 +988,48 @@ class _$MetaData implements MetaData {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is MetaData &&
-            const DeepCollectionEquality()
-                .equals(other.pagination, pagination));
+            other is _$MetaDataImpl &&
+            (identical(other.pagination, pagination) ||
+                other.pagination == pagination));
   }
 
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(pagination));
+  int get hashCode => Object.hash(runtimeType, pagination);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Meta
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  $MetaDataCopyWith<MetaData> get copyWith =>
-      _$MetaDataCopyWithImpl<MetaData>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$MetaDataImplCopyWith<_$MetaDataImpl> get copyWith =>
+      __$$MetaDataImplCopyWithImpl<_$MetaDataImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$MetaDataToJson(this);
+    return _$$MetaDataImplToJson(
+      this,
+    );
   }
 }
 
 abstract class MetaData implements Meta {
-  const factory MetaData({Pagination? pagination}) = _$MetaData;
+  const factory MetaData({final Pagination? pagination}) = _$MetaDataImpl;
 
-  factory MetaData.fromJson(Map<String, dynamic> json) = _$MetaData.fromJson;
+  factory MetaData.fromJson(Map<String, dynamic> json) =
+      _$MetaDataImpl.fromJson;
 
   @override
   Pagination? get pagination;
+
+  /// Create a copy of Meta
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  $MetaDataCopyWith<MetaData> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$MetaDataImplCopyWith<_$MetaDataImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -998,35 +1038,18 @@ Pagination _$PaginationFromJson(Map<String, dynamic> json) {
 }
 
 /// @nodoc
-class _$PaginationTearOff {
-  const _$PaginationTearOff();
-
-  PaginationData call({int? page, int? pageSize, int? pageCount, int? total}) {
-    return PaginationData(
-      page: page,
-      pageSize: pageSize,
-      pageCount: pageCount,
-      total: total,
-    );
-  }
-
-  Pagination fromJson(Map<String, Object?> json) {
-    return Pagination.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Pagination = _$PaginationTearOff();
-
-/// @nodoc
 mixin _$Pagination {
   int? get page => throw _privateConstructorUsedError;
   int? get pageSize => throw _privateConstructorUsedError;
   int? get pageCount => throw _privateConstructorUsedError;
   int? get total => throw _privateConstructorUsedError;
 
+  /// Serializes this Pagination to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Pagination
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $PaginationCopyWith<Pagination> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1035,18 +1058,24 @@ mixin _$Pagination {
 abstract class $PaginationCopyWith<$Res> {
   factory $PaginationCopyWith(
           Pagination value, $Res Function(Pagination) then) =
-      _$PaginationCopyWithImpl<$Res>;
+      _$PaginationCopyWithImpl<$Res, Pagination>;
+  @useResult
   $Res call({int? page, int? pageSize, int? pageCount, int? total});
 }
 
 /// @nodoc
-class _$PaginationCopyWithImpl<$Res> implements $PaginationCopyWith<$Res> {
+class _$PaginationCopyWithImpl<$Res, $Val extends Pagination>
+    implements $PaginationCopyWith<$Res> {
   _$PaginationCopyWithImpl(this._value, this._then);
 
-  final Pagination _value;
   // ignore: unused_field
-  final $Res Function(Pagination) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  /// Create a copy of Pagination
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? page = freezed,
@@ -1055,46 +1084,48 @@ class _$PaginationCopyWithImpl<$Res> implements $PaginationCopyWith<$Res> {
     Object? total = freezed,
   }) {
     return _then(_value.copyWith(
-      page: page == freezed
+      page: freezed == page
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
               as int?,
-      pageSize: pageSize == freezed
+      pageSize: freezed == pageSize
           ? _value.pageSize
           : pageSize // ignore: cast_nullable_to_non_nullable
               as int?,
-      pageCount: pageCount == freezed
+      pageCount: freezed == pageCount
           ? _value.pageCount
           : pageCount // ignore: cast_nullable_to_non_nullable
               as int?,
-      total: total == freezed
+      total: freezed == total
           ? _value.total
           : total // ignore: cast_nullable_to_non_nullable
               as int?,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class $PaginationDataCopyWith<$Res>
+abstract class _$$PaginationDataImplCopyWith<$Res>
     implements $PaginationCopyWith<$Res> {
-  factory $PaginationDataCopyWith(
-          PaginationData value, $Res Function(PaginationData) then) =
-      _$PaginationDataCopyWithImpl<$Res>;
+  factory _$$PaginationDataImplCopyWith(_$PaginationDataImpl value,
+          $Res Function(_$PaginationDataImpl) then) =
+      __$$PaginationDataImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({int? page, int? pageSize, int? pageCount, int? total});
 }
 
 /// @nodoc
-class _$PaginationDataCopyWithImpl<$Res> extends _$PaginationCopyWithImpl<$Res>
-    implements $PaginationDataCopyWith<$Res> {
-  _$PaginationDataCopyWithImpl(
-      PaginationData _value, $Res Function(PaginationData) _then)
-      : super(_value, (v) => _then(v as PaginationData));
+class __$$PaginationDataImplCopyWithImpl<$Res>
+    extends _$PaginationCopyWithImpl<$Res, _$PaginationDataImpl>
+    implements _$$PaginationDataImplCopyWith<$Res> {
+  __$$PaginationDataImplCopyWithImpl(
+      _$PaginationDataImpl _value, $Res Function(_$PaginationDataImpl) _then)
+      : super(_value, _then);
 
-  @override
-  PaginationData get _value => super._value as PaginationData;
-
+  /// Create a copy of Pagination
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? page = freezed,
@@ -1102,20 +1133,20 @@ class _$PaginationDataCopyWithImpl<$Res> extends _$PaginationCopyWithImpl<$Res>
     Object? pageCount = freezed,
     Object? total = freezed,
   }) {
-    return _then(PaginationData(
-      page: page == freezed
+    return _then(_$PaginationDataImpl(
+      page: freezed == page
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
               as int?,
-      pageSize: pageSize == freezed
+      pageSize: freezed == pageSize
           ? _value.pageSize
           : pageSize // ignore: cast_nullable_to_non_nullable
               as int?,
-      pageCount: pageCount == freezed
+      pageCount: freezed == pageCount
           ? _value.pageCount
           : pageCount // ignore: cast_nullable_to_non_nullable
               as int?,
-      total: total == freezed
+      total: freezed == total
           ? _value.total
           : total // ignore: cast_nullable_to_non_nullable
               as int?,
@@ -1125,12 +1156,12 @@ class _$PaginationDataCopyWithImpl<$Res> extends _$PaginationCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$PaginationData implements PaginationData {
-  const _$PaginationData(
+class _$PaginationDataImpl implements PaginationData {
+  const _$PaginationDataImpl(
       {this.page, this.pageSize, this.pageCount, this.total});
 
-  factory _$PaginationData.fromJson(Map<String, dynamic> json) =>
-      _$$PaginationDataFromJson(json);
+  factory _$PaginationDataImpl.fromJson(Map<String, dynamic> json) =>
+      _$$PaginationDataImplFromJson(json);
 
   @override
   final int? page;
@@ -1147,44 +1178,49 @@ class _$PaginationData implements PaginationData {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is PaginationData &&
-            const DeepCollectionEquality().equals(other.page, page) &&
-            const DeepCollectionEquality().equals(other.pageSize, pageSize) &&
-            const DeepCollectionEquality().equals(other.pageCount, pageCount) &&
-            const DeepCollectionEquality().equals(other.total, total));
+            other is _$PaginationDataImpl &&
+            (identical(other.page, page) || other.page == page) &&
+            (identical(other.pageSize, pageSize) ||
+                other.pageSize == pageSize) &&
+            (identical(other.pageCount, pageCount) ||
+                other.pageCount == pageCount) &&
+            (identical(other.total, total) || other.total == total));
   }
 
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(page),
-      const DeepCollectionEquality().hash(pageSize),
-      const DeepCollectionEquality().hash(pageCount),
-      const DeepCollectionEquality().hash(total));
+  int get hashCode =>
+      Object.hash(runtimeType, page, pageSize, pageCount, total);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Pagination
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  $PaginationDataCopyWith<PaginationData> get copyWith =>
-      _$PaginationDataCopyWithImpl<PaginationData>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$PaginationDataImplCopyWith<_$PaginationDataImpl> get copyWith =>
+      __$$PaginationDataImplCopyWithImpl<_$PaginationDataImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$PaginationDataToJson(this);
+    return _$$PaginationDataImplToJson(
+      this,
+    );
   }
 }
 
 abstract class PaginationData implements Pagination {
   const factory PaginationData(
-      {int? page,
-      int? pageSize,
-      int? pageCount,
-      int? total}) = _$PaginationData;
+      {final int? page,
+      final int? pageSize,
+      final int? pageCount,
+      final int? total}) = _$PaginationDataImpl;
 
   factory PaginationData.fromJson(Map<String, dynamic> json) =
-      _$PaginationData.fromJson;
+      _$PaginationDataImpl.fromJson;
 
   @override
   int? get page;
@@ -1194,8 +1230,11 @@ abstract class PaginationData implements Pagination {
   int? get pageCount;
   @override
   int? get total;
+
+  /// Create a copy of Pagination
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  $PaginationDataCopyWith<PaginationData> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$PaginationDataImplCopyWith<_$PaginationDataImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -1,5 +1,5 @@
-import 'package:dart_strapi/dart_strapi.dart';
-import 'package:dart_strapi/src/models/models.dart';
+import 'package:dart_strapi_client/dart_strapi_client.dart';
+import 'package:dart_strapi_client/src/models/models.dart';
 import 'package:dio/dio.dart';
 import 'package:tuple/tuple.dart';
 

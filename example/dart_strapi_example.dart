@@ -1,9 +1,10 @@
-import 'package:dart_strapi/dart_strapi.dart';
+import 'package:dart_strapi_client/dart_strapi_client.dart';
 
 final serverUrl = 'http://localhost:1337';
-final authToken = '<token>';
-final collection = '<collectionType>';
-final single = '<singleType>';
+final authToken = '5027d9b5e571423fa87304e4959c24fdfca3c8359636ef7b72c9dd88f052298e6a530cc24959990e37cee708927ac386eb0dbebf92c928ce1165ecc4cf3bb7f44bf59b04dcbc26ef8d9b1ad0368bb71a744ce7514c5d5f195b27032174b4c5465e5e80ee6992c2e6f8975214fde06f6119e2f20ab498de3399e29ed1847b526a';
+final collection = 'faqs';
+final single = 'about';
+final singleId = 'taaafstubryfkuwi7xpzbpqd';
 
 void main() async {
   final client = Strapi(
@@ -17,39 +18,20 @@ void main() async {
   print("Meta: ${singleResponse.item2}");
   print("\n----------------------------------------------------\n");
 
-  final singleNotFoundResponse = await client.single.get("lalala");
-  print("Single Not Found Response: $singleNotFoundResponse"); // [null, null]
-  print("Data: ${singleNotFoundResponse.item1}"); // null
-  print("Meta: ${singleNotFoundResponse.item2}"); // null
-  print("\n----------------------------------------------------\n");
-
   final collectionResponse = await client.collection.get(collection);
   print("Collection Response: $collectionResponse");
   print("Data: ${collectionResponse.item1}");
   print("Meta: ${collectionResponse.item2}");
   print("\n----------------------------------------------------\n");
 
-  final collectionNotFoundResponse = await client.collection.get('rarara');
-  print(
-      "Collection Not Found Response: $collectionNotFoundResponse"); // [null, null]
-  print("Data: ${collectionNotFoundResponse.item1}"); // null
-  print("Meta: ${collectionNotFoundResponse.item2}"); // null
-  print("\n----------------------------------------------------\n");
 
   final collectionSingleResponse =
-      await client.collection.getOne(collection, 1);
+      await client.collection.getOne(collection, singleId);
   print("Collection Single Response: $collectionSingleResponse");
   print("Data: ${collectionSingleResponse.item1}");
   print("Meta: ${collectionSingleResponse.item2}");
   print("\n----------------------------------------------------\n");
 
-  final collectionSingleNotFoundResponse =
-      await client.collection.getOne("xaxaxa", 1);
-  print(
-      "Collection Single Not Found Response: $collectionSingleNotFoundResponse"); // [null, null]
-  print("Data: ${collectionSingleNotFoundResponse.item1}"); // null
-  print("Meta: ${collectionSingleNotFoundResponse.item2}"); // null
-  print("\n----------------------------------------------------\n");
 
   final resourceSingle = await client.resource.get(single);
   print("Resource Single Response: $resourceSingle"); // Response<Data.single>
@@ -60,7 +42,7 @@ void main() async {
       "Resource Collection Response: $resourceCollection"); // Response<Data.collection>
   print("\n----------------------------------------------------\n");
 
-  final resourceCollectionSingle = await client.resource.get("$collection/1");
+  final resourceCollectionSingle = await client.resource.get("$collection/$singleId");
   print(
       "Resource Collection Single Response: $resourceCollectionSingle"); // Response<Data.single>
   print("\n----------------------------------------------------\n");
